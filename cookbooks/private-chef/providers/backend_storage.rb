@@ -2,7 +2,7 @@
 action :drbd do
   install_drbd_packages
   create_drbd_dirs
-  create_lvm(disk_devmap[1]) # assume drbd volume is the second disk (ephemeral)
+  create_lvm([disk_devmap[1]]) # assume drbd volume is the second disk (ephemeral)
   create_drbd_config_files
   setup_drbd
   touch_drbd_ready
@@ -14,7 +14,7 @@ action :ebs_shared do
   create_drbd_dirs
   if topology.bootstrap_node_name == node.name
     attach_ebs_volume
-    create_lvm(disk_devmap[3]) # assume drbd/ebs volume is the fourth disk (/dev/sdd)
+    create_lvm([disk_devmap[3]]) # assume drbd/ebs volume is the fourth disk (/dev/sdd)
     mount_ebs
     save_ebs_volumes_db
   else
@@ -151,9 +151,7 @@ def install_drbd_packages
       not_if { platform?('amazon', 'oracle') }
 
       # Ugh, very annoying elrepo packaging issue with drbd
-      if node['platform_version'].to_f >= 6.6
-        version '8.4.5-2.el6.elrepo'
-      else
+      if node['platform_version'].to_f >= 6.0 && node['platform_version'].to_f < 6.6
         version '8.4.5-1.el6.elrepo'
       end
     end
@@ -174,12 +172,16 @@ def create_drbd_dirs
 end
 
 def fstype
-  if system('which mkfs.ext4')
+  if node['platform_family'] == 'debian' || node['platform'] == 'centos'
+    package 'xfsprogs'
+    'xfs'
+  elsif system('which mkfs.ext4')
     'ext4'
   else
     'ext3'
   end
 end
+
 
 def create_lvm(disks, mountpoint = nil)
   stupid_chown_trick = false

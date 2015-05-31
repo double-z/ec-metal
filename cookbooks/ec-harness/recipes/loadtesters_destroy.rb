@@ -2,12 +2,9 @@
 
 require 'chef/config'
 
-# include_recipe "ec-harness::#{node['harness']['provider']}"
-
-topo = TopoHelper.new(ec_config: node['harness']['vm_config'], exclude_layers: ['loadtesters'])
 if node['harness']['ec2']
   fog = FogHelper.new(region: node['harness']['ec2']['region'])
-  elb_name = topo.bootstrap_host_name.gsub(/[.]/, '-')
+  elb_name = ecm_topo.bootstrap_host_name.gsub(/[.]/, '-')
 end
 
 # use bootstrap_host_name - it should be in /etc/hosts already
@@ -21,7 +18,7 @@ chef_user_pem = ::File.join(users_path, chef_user, '.chef', "#{chef_user}.pem")
 if node['harness']['ec2'] && node['harness']['ec2']['elb'] && node['harness']['ec2']['elb'] == true
   chef_server =  fog.get_elb_dns_name(elb_name)
 else
-  chef_server = ::Resolv.getaddress(topo.bootstrap_host_name)
+  chef_server = ::Resolv.getaddress(ecm_topo.bootstrap_host_name)
 end
 chef_server_url = "https://#{chef_server}/organizations/#{chef_org}"
 
@@ -32,9 +29,10 @@ with_chef_server chef_server_url,
                  signing_key_filename: chef_user_pem
 
 
-machine_batch 'destroy_all_the_loadtesters' do
-  action :destroy
-      1.upto(node['harness']['loadtesters']['num_loadtesters']) do |i|
-        machine "#{ENV['USER']}-loadtester-#{i}"
-      end
+node['harness']['vm_config']['loadtesters'].each do |vmname, config|
+  log 1.upto(node['harness']['loadtesters']['num_loadtesters']).map {|i| "#{ENV['USER']}-#{vmname}-#{i}" }
+  machine_batch "cleanup_loadtesters_#{vmname}" do
+    action :destroy
+    machines 1.upto(node['harness']['loadtesters']['num_loadtesters']).map {|i| "#{ENV['USER']}-#{vmname}-#{i}" }
+  end
 end

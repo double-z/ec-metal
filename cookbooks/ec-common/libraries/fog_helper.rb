@@ -42,9 +42,12 @@ class FogHelper
   def get_elb_dns_name(id)
     @elb ||= get_elb
     @elb.load_balancers.get(id).dns_name
+  rescue
+    'notcreatedyet'
   end
 
   def get_root_blockdevice
+    puts "If you see me more than once, I should be memoized! #{@ami}"
     ami_desc = describe_ami.first
     ami_desc['blockDeviceMapping'].
       select { |dev| dev['deviceName'] =~ /sda/ }.
