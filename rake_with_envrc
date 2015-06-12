@@ -1,0 +1,4 @@
+#!/bin/bash
+
+. $PWD/.envrc
+/usr/bin/chef exec rake "$@"
