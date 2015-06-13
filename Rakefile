@@ -2,7 +2,18 @@ require 'json'
 require 'fileutils'
 require './cookbooks/ec-common/libraries/topo_helper.rb'
 
-require_relative 'lib/api.rb'
+if ENV['METAL_ROOT']
+  require "#{ENV['METAL_ROOT']}/cookbooks/ec-common/libraries/topo_helper.rb"
+else
+  require './cookbooks/ec-common/libraries/topo_helper.rb'
+end
+
+if ENV['METAL_ROOT']
+  require "#{ENV['METAL_ROOT']}/lib/api.rb"
+else
+  require_relative 'lib/api.rb'
+end
+
 Dir["lib/tasks/*.rake"].each { |t| load t }
 
 task :default => [:up]
