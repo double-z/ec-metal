@@ -1,3 +1,4 @@
+.chef/local-mode-cache
 .bundle
 bin/*
 config.json
@@ -15,3 +16,4 @@ chef-repo
 *.lock
 
 !bin/ecm
+

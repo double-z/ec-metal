@@ -1,0 +1,508 @@
+{
+  "revision_id": "dff0d7320fd23369f3ac7b0f8c6065e99532737a4fa8844522b9c3cf4593bee8",
+  "name": "private-chef",
+  "run_list": [
+    "recipe[private-chef::default]"
+  ],
+  "cookbook_locks": {
+    "private-chef": {
+      "version": "0.0.1",
+      "identifier": "ac16d30efa08eca7335b31a3804444d6ae707c30",
+      "dotted_decimal_identifier": "48438791739410668.47062787878518852.75688840297520",
+      "source": "cookbooks/private-chef",
+      "cache_key": null,
+      "scm_info": {
+        "scm": "git",
+        "remote": null,
+        "revision": "1479b6c11440552d3258113d9a2eee7be5e0347c",
+        "working_tree_clean": false,
+        "published": false,
+        "synchronized_remote_branches": [
+
+        ]
+      },
+      "source_options": {
+        "path": "cookbooks/private-chef"
+      }
+    },
+    "ec-common": {
+      "version": "0.1.2",
+      "identifier": "8f285cfb358fc0a0b9af9c4ef5969ccccd2fd756",
+      "dotted_decimal_identifier": "40295301486317504.45240160166540694.172403429726038",
+      "source": "cookbooks/ec-common",
+      "cache_key": null,
+      "scm_info": {
+        "scm": "git",
+        "remote": null,
+        "revision": "1479b6c11440552d3258113d9a2eee7be5e0347c",
+        "working_tree_clean": false,
+        "published": false,
+        "synchronized_remote_branches": [
+
+        ]
+      },
+      "source_options": {
+        "path": "cookbooks/ec-common"
+      }
+    },
+    "apt": {
+      "version": "2.7.0",
+      "identifier": "db999291e1dfeab28a75d44ae26028ada3fce5d1",
+      "dotted_decimal_identifier": "61811874691407850.50254784531980896.44726245713361",
+      "source": "vendor/cookbooks/apt",
+      "cache_key": null,
+      "scm_info": {
+        "scm": "git",
+        "remote": null,
+        "revision": "1479b6c11440552d3258113d9a2eee7be5e0347c",
+        "working_tree_clean": false,
+        "published": false,
+        "synchronized_remote_branches": [
+
+        ]
+      },
+      "source_options": {
+        "path": "vendor/cookbooks/apt"
+      }
+    },
+    "aws": {
+      "version": "2.7.2",
+      "identifier": "b6a3afee8e54a49b900ba1722586cb20f0d80502",
+      "dotted_decimal_identifier": "51408421778248868.43787001017804166.223342340080898",
+      "source": "vendor/cookbooks/aws",
+      "cache_key": null,
+      "scm_info": {
+        "scm": "git",
+        "remote": null,
+        "revision": "1479b6c11440552d3258113d9a2eee7be5e0347c",
+        "working_tree_clean": false,
+        "published": false,
+        "synchronized_remote_branches": [
+
+        ]
+      },
+      "source_options": {
+        "path": "vendor/cookbooks/aws"
+      }
+    },
+    "chef-client": {
+      "version": "4.3.1",
+      "identifier": "9574b6f79603f28ca31ceb896020aa780ab40906",
+      "dotted_decimal_identifier": "42068100716561394.39585841345552416.187432552368390",
+      "source": "vendor/cookbooks/chef-client",
+      "cache_key": null,
+      "scm_info": {
+        "scm": "git",
+        "remote": null,
+        "revision": "1479b6c11440552d3258113d9a2eee7be5e0347c",
+        "working_tree_clean": false,
+        "published": false,
+        "synchronized_remote_branches": [
+
+        ]
+      },
+      "source_options": {
+        "path": "vendor/cookbooks/chef-client"
+      }
+    },
+    "chef_handler": {
+      "version": "1.2.0",
+      "identifier": "f1255ebe8b01fd471b4879aeccdbf940d90e388d",
+      "dotted_decimal_identifier": "67876558241202685.20014721439550683.274056914811021",
+      "source": "vendor/cookbooks/chef_handler",
+      "cache_key": null,
+      "scm_info": {
+        "scm": "git",
+        "remote": null,
+        "revision": "1479b6c11440552d3258113d9a2eee7be5e0347c",
+        "working_tree_clean": false,
+        "published": false,
+        "synchronized_remote_branches": [
+
+        ]
+      },
+      "source_options": {
+        "path": "vendor/cookbooks/chef_handler"
+      }
+    },
+    "cron": {
+      "version": "1.6.1",
+      "identifier": "71bddf664c72ff66cb04b89052c78b94a31c266c",
+      "dotted_decimal_identifier": "32015439559947007.28933668761260743.153470507951724",
+      "source": "vendor/cookbooks/cron",
+      "cache_key": null,
+      "scm_info": {
+        "scm": "git",
+        "remote": null,
+        "revision": "1479b6c11440552d3258113d9a2eee7be5e0347c",
+        "working_tree_clean": false,
+        "published": false,
+        "synchronized_remote_branches": [
+
+        ]
+      },
+      "source_options": {
+        "path": "vendor/cookbooks/cron"
+      }
+    },
+    "docker": {
+      "version": "0.43.0",
+      "identifier": "0ffed33dca1f5d1b1ac8db48ac7ddb6a6fedaa31",
+      "dotted_decimal_identifier": "4502307878870877.7629274345942141.241250190862897",
+      "source": "vendor/cookbooks/docker",
+      "cache_key": null,
+      "scm_info": {
+        "scm": "git",
+        "remote": null,
+        "revision": "1479b6c11440552d3258113d9a2eee7be5e0347c",
+        "working_tree_clean": false,
+        "published": false,
+        "synchronized_remote_branches": [
+
+        ]
+      },
+      "source_options": {
+        "path": "vendor/cookbooks/docker"
+      }
+    },
+    "ec-tools": {
+      "version": "0.2.0",
+      "identifier": "b93d401315502a52cdb73d11d78628f6083c68ae",
+      "dotted_decimal_identifier": "52140216098836522.23307134977562502.45037165242542",
+      "source": "vendor/cookbooks/ec-tools",
+      "cache_key": null,
+      "scm_info": {
+        "scm": "git",
+        "remote": null,
+        "revision": "1479b6c11440552d3258113d9a2eee7be5e0347c",
+        "working_tree_clean": false,
+        "published": false,
+        "synchronized_remote_branches": [
+
+        ]
+      },
+      "source_options": {
+        "path": "vendor/cookbooks/ec-tools"
+      }
+    },
+    "hostsfile": {
+      "version": "2.4.5",
+      "identifier": "2cae48f91334b894650992c79ab9acd3bc46a7b1",
+      "dotted_decimal_identifier": "12576527414932664.41769388344842937.190025396823985",
+      "source": "vendor/cookbooks/hostsfile",
+      "cache_key": null,
+      "scm_info": {
+        "scm": "git",
+        "remote": null,
+        "revision": "1479b6c11440552d3258113d9a2eee7be5e0347c",
+        "working_tree_clean": false,
+        "published": false,
+        "synchronized_remote_branches": [
+
+        ]
+      },
+      "source_options": {
+        "path": "vendor/cookbooks/hostsfile"
+      }
+    },
+    "logrotate": {
+      "version": "1.9.2",
+      "identifier": "1ed59db0a24706cf8ca3979a70bfdfa93998482b",
+      "dotted_decimal_identifier": "8679122551326470.58419954430144703.245917908748331",
+      "source": "vendor/cookbooks/logrotate",
+      "cache_key": null,
+      "scm_info": {
+        "scm": "git",
+        "remote": null,
+        "revision": "1479b6c11440552d3258113d9a2eee7be5e0347c",
+        "working_tree_clean": false,
+        "published": false,
+        "synchronized_remote_branches": [
+
+        ]
+      },
+      "source_options": {
+        "path": "vendor/cookbooks/logrotate"
+      }
+    },
+    "lvm": {
+      "version": "1.3.7",
+      "identifier": "22f339ed5013fb1a88e979617cd441b900b70385",
+      "dotted_decimal_identifier": "9837579328295931.7468885739666644.72262836749189",
+      "source": "vendor/cookbooks/lvm",
+      "cache_key": null,
+      "scm_info": {
+        "scm": "git",
+        "remote": null,
+        "revision": "1479b6c11440552d3258113d9a2eee7be5e0347c",
+        "working_tree_clean": false,
+        "published": false,
+        "synchronized_remote_branches": [
+
+        ]
+      },
+      "source_options": {
+        "path": "vendor/cookbooks/lvm"
+      }
+    },
+    "windows": {
+      "version": "1.38.1",
+      "identifier": "7d294359db7db3df7531df602de34d099ed18185",
+      "dotted_decimal_identifier": "35229741335936435.62897776867945955.84703714574725",
+      "source": "vendor/cookbooks/windows",
+      "cache_key": null,
+      "scm_info": {
+        "scm": "git",
+        "remote": null,
+        "revision": "1479b6c11440552d3258113d9a2eee7be5e0347c",
+        "working_tree_clean": false,
+        "published": false,
+        "synchronized_remote_branches": [
+
+        ]
+      },
+      "source_options": {
+        "path": "vendor/cookbooks/windows"
+      }
+    },
+    "yum": {
+      "version": "3.6.3",
+      "identifier": "e640703e1d237cbace9ba8c078a1c6bbad379a3e",
+      "dotted_decimal_identifier": "64810095466062716.52581513614620833.218509367286334",
+      "source": "vendor/cookbooks/yum",
+      "cache_key": null,
+      "scm_info": {
+        "scm": "git",
+        "remote": null,
+        "revision": "1479b6c11440552d3258113d9a2eee7be5e0347c",
+        "working_tree_clean": false,
+        "published": false,
+        "synchronized_remote_branches": [
+
+        ]
+      },
+      "source_options": {
+        "path": "vendor/cookbooks/yum"
+      }
+    },
+    "yum-elrepo": {
+      "version": "0.2.1",
+      "identifier": "de9560202fc3c312687a86b09c3f2bfaf1db4c2b",
+      "dotted_decimal_identifier": "62651684919165891.5181425035811903.48356799499307",
+      "source": "vendor/cookbooks/yum-elrepo",
+      "cache_key": null,
+      "scm_info": {
+        "scm": "git",
+        "remote": null,
+        "revision": "1479b6c11440552d3258113d9a2eee7be5e0347c",
+        "working_tree_clean": false,
+        "published": false,
+        "synchronized_remote_branches": [
+
+        ]
+      },
+      "source_options": {
+        "path": "vendor/cookbooks/yum-elrepo"
+      }
+    },
+    "yum-epel": {
+      "version": "0.6.2",
+      "identifier": "8c4868aa520cabe98df439c342d7a08799d3e3e2",
+      "dotted_decimal_identifier": "39486111110794411.65739749654217431.176504261829602",
+      "source": "vendor/cookbooks/yum-epel",
+      "cache_key": null,
+      "scm_info": {
+        "scm": "git",
+        "remote": null,
+        "revision": "1479b6c11440552d3258113d9a2eee7be5e0347c",
+        "working_tree_clean": false,
+        "published": false,
+        "synchronized_remote_branches": [
+
+        ]
+      },
+      "source_options": {
+        "path": "vendor/cookbooks/yum-epel"
+      }
+    }
+  },
+  "default_attributes": {
+
+  },
+  "override_attributes": {
+
+  },
+  "solution_dependencies": {
+    "Policyfile": [
+      [
+        "private-chef",
+        ">= 0.0.0"
+      ],
+      [
+        "ec-common",
+        ">= 0.0.0"
+      ],
+      [
+        "apt",
+        ">= 0.0.0"
+      ],
+      [
+        "aws",
+        ">= 0.0.0"
+      ],
+      [
+        "chef-client",
+        ">= 0.0.0"
+      ],
+      [
+        "chef_handler",
+        ">= 0.0.0"
+      ],
+      [
+        "cron",
+        ">= 0.0.0"
+      ],
+      [
+        "docker",
+        ">= 0.0.0"
+      ],
+      [
+        "ec-tools",
+        ">= 0.0.0"
+      ],
+      [
+        "hostsfile",
+        ">= 0.0.0"
+      ],
+      [
+        "logrotate",
+        ">= 0.0.0"
+      ],
+      [
+        "lvm",
+        ">= 0.0.0"
+      ],
+      [
+        "windows",
+        ">= 0.0.0"
+      ],
+      [
+        "yum",
+        ">= 0.0.0"
+      ],
+      [
+        "yum-elrepo",
+        ">= 0.0.0"
+      ],
+      [
+        "yum-epel",
+        ">= 0.0.0"
+      ]
+    ],
+    "dependencies": {
+      "private-chef (0.0.1)": [
+        [
+          "apt",
+          ">= 0.0.0"
+        ],
+        [
+          "aws",
+          ">= 0.0.0"
+        ],
+        [
+          "hostsfile",
+          ">= 0.0.0"
+        ],
+        [
+          "lvm",
+          ">= 0.0.0"
+        ],
+        [
+          "yum",
+          ">= 0.0.0"
+        ],
+        [
+          "yum-epel",
+          ">= 0.0.0"
+        ],
+        [
+          "yum-elrepo",
+          ">= 0.0.0"
+        ],
+        [
+          "ec-tools",
+          ">= 0.0.0"
+        ],
+        [
+          "ec-common",
+          ">= 0.0.0"
+        ]
+      ],
+      "ec-common (0.1.2)": [
+
+      ],
+      "apt (2.7.0)": [
+
+      ],
+      "aws (2.7.2)": [
+
+      ],
+      "chef-client (4.3.1)": [
+        [
+          "cron",
+          ">= 1.2.0"
+        ],
+        [
+          "logrotate",
+          ">= 1.2.0"
+        ],
+        [
+          "windows",
+          "~> 1.37"
+        ]
+      ],
+      "chef_handler (1.2.0)": [
+
+      ],
+      "cron (1.6.1)": [
+
+      ],
+      "docker (0.43.0)": [
+
+      ],
+      "ec-tools (0.2.0)": [
+
+      ],
+      "hostsfile (2.4.5)": [
+
+      ],
+      "logrotate (1.9.2)": [
+
+      ],
+      "lvm (1.3.7)": [
+
+      ],
+      "windows (1.38.1)": [
+        [
+          "chef_handler",
+          ">= 0.0.0"
+        ]
+      ],
+      "yum (3.6.3)": [
+
+      ],
+      "yum-elrepo (0.2.1)": [
+        [
+          "yum",
+          "~> 3.0"
+        ]
+      ],
+      "yum-epel (0.6.2)": [
+        [
+          "yum",
+          "~> 3.2"
+        ]
+      ]
+    }
+  }
+}

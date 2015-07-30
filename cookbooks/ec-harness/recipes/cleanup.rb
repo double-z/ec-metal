@@ -1,4 +1,7 @@
-# encoding: utf-8
+Provisioner::Config.load_running_from_json!(
+"/Users/zzondlo/chef/repos/ec-metal.double-z/harness.json",
+  node,
+)
 
 include_recipe "ec-harness::#{node['harness']['provider']}"
 

@@ -1,14 +1,22 @@
-# encoding: utf-8
+Provisioner::Config.load_running_from_json!(
+"/Users/zzondlo/chef/repos/ec-metal.double-z/harness.json",
+  node,
+)
 
-include_recipe 'ec-harness::cloud_create' if node['harness']['provider'] == 'ec2'
+# include_recipe 'ec-harness::cloud_create' if node['harness']['provider'] == 'ec2'
 
 # Converge the bootstrap or standalone server first
 include_recipe 'ec-harness::bootstrap_server'
 # converge the rest of the machines in the cluster (if any) in parallel
 include_recipe 'ec-harness::cluster_servers'
 # then bring up the analytics servers
-include_recipe 'ec-harness::analytics_servers'
+# include_recipe 'ec-harness::analytics_servers'
 
-if node['harness']['run_pedant'] == true
-  include_recipe 'ec-harness::pedant'
-end
+# if node['harness']['run_pedant'] == true
+#   include_recipe 'ec-harness::pedant'
+# end
+
+
+puts Chef::JSONCompat.to_json_pretty('harness' => node['harness'])
+
+

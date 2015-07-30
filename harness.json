@@ -1,0 +1,75 @@
+{
+  "harness": {
+    "harness_dir": "/Users/zzondlo/chef/repos/ec-metal.double-z",
+    "provider": "vagrant",
+    "vagrant": {
+      "box": "opscode-centos-6.6",
+      "box_url": "http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_centos-6.6_chef-provisionerless.box",
+      "disk2_size": "2"
+    },
+    "ec2": null,
+    "vm_config": {
+      "topology": "tier",
+      "api_fqdn": "api.ubuntu.vagrant",
+      "manage_fqdn": "manage.ubuntu.vagrant",
+      "analytics_fqdn": "analytics.ubuntu.vagrant",
+      "backend_vip": {
+        "hostname": "backend.ubuntu.vagrant",
+        "ipaddress": "33.33.33.21",
+        "heartbeat_device": "eth2",
+        "device": "eth1"
+      },
+      "backends": {
+        "backend1": {
+          "hostname": "backend1.ubuntu.vagrant",
+          "ipaddress": "33.33.33.21",
+          "cluster_ipaddress": "33.33.34.5",
+          "memory": "2560",
+          "cpus": "2",
+          "bootstrap": true
+        }
+      },
+      "frontends": {
+        "frontend1": {
+          "hostname": "frontend1.ubuntu.vagrant",
+          "ipaddress": "33.33.33.23",
+          "memory": "1024",
+          "cpus": "1"
+        }
+      },
+      "virtual_hosts": {
+        "private-chef.ubuntu.vagrant": "33.33.33.23",
+        "manage.ubuntu.vagrant": "33.33.33.23",
+        "api.ubuntu.vagrant": "33.33.33.23",
+        "analytics.ubuntu.vagrant": "33.33.33.23",
+        "backend.ubuntu.vagrant": "33.33.33.20",
+        "backend1.ubuntu.vagrant": "33.33.33.21",
+        "backend2.ubuntu.vagrant": "33.33.33.22",
+        "frontend1.ubuntu.vagrant": "33.33.33.23"
+      },
+      "lemme_doit": false
+    },
+    "default_package": "chef-server-core-12.1.2-1.el6.x86_64.rpm",
+    "manage_package": "opscode-manage-1.18.0-1.el6.x86_64.rpm",
+    "reporting_package": "opscode-reporting-1.3.0-1.el6.x86_64.rpm",
+    "run_pedant": true,
+    "osc_install": false,
+    "osc_upgrade": false,
+    "packages": null,
+    "apply_ec_bugfixes": false,
+    "pushy_package": null,
+    "analytics_package": null,
+    "manage_options": {
+
+    },
+    "repo_path": "/Users/zzondlo/chef/repos/ec-metal.double-z/chef-repo",
+    "vms_dir": "/Users/zzondlo/chef/repos/ec-metal.double-z/vagrant_vms",
+    "host_cache_path": "/Users/zzondlo/chef/repos/ec-metal.double-z/cache",
+    "vm_mountpoint": "/tmp/ecm_cache",
+    "root_ssh": {
+      "privkey": "-----BEGIN RSA PRIVATE KEY-----\nMIIEpAIBAAKCAQEA0uAA0LXgYrJKavbE1lzVeG5Kg8KZsEWOhZMqCD7izSqkVo/K\nY9Z8crrPkkauzKeXc9xshFB/O9q9hOwdLYrHEiU9fo5db1mHoim9rps5kRqhwiOw\nHrT9S76zoVcsTDlIkoP78JWfv5TtFZGpnODs3zM67HgvySagzW/oFuLn6oAAsjVq\nzyAP35iVkaKYt3zJWZAjFgLXKihD9ssJYspeGWwFOaK3NJymBY2YYeKa0GeDXSSe\n16YqW2bAXdHy/f21bk3eFjxmGq7wRtJ42bHrbLjvl/C+gOokdDag/+1CK5UVmwQ4\nn8ADC6+WIlm2dtA7iga2JA1UByCKG1Vx6jy0kQIDAQABAoIBADbYRb4Cn7Jrtokt\nVzJ9gJPK85xjP3+mB5RcGyF74ZcE0SsmSLhAr6tTROtBcPMPX4elu5+KJB1YHdR1\naH1Qy8e/YcgJlOmB+pHFk2zXOFix+YI5r/O8lOhfV+7Nclr8xxA8PYlsENlODX9/\nnAKOSW0fsOKRu7PwVQA5a76QE0tcuGfQ6+tDqpOouyHupJGvYVwROzJMffPMHtqO\n06h3ZE6bpAmJrA/kX2iL+YoBb6Tast6J19JlONegIsqnu6jR4s8mJdf771ri11UM\nkOOE6nIL+xkkY3aAhXNMoiNLZQmSJuhBZSsjaTmFUzv8bn3HPDdXH2Blt73Sx2KB\nXSRKwAECgYEA72fD1/WMf/C7llNR/71UErYbaIyYsD9dgVD3FuS6mxNFTH9OpMLX\nl9aFube/L++BmTGx24c9hs1Ibzrvd3SxaLgZTI2PEru8zka8lKer738hqmlQ9shy\nE/vimwTVbRE6EneCdRQZPx8F7pnoc5ITguUiOFHi4w/MfFwVAA5dbAECgYEA4X34\nGngjkUPOdjMRpScYyuR6ytrDOfEk3W58ydD/AQH6C5IBrvbzykx6NWo/Y2UH3Kn8\n/jcdsK8hcxzPIh6YKqIJDvDtfz6IH/1LIonMOKaW4KhchAQqU4xB29aiQhjKaqEE\nRe7b0n51paaiwclU3U/hKViOE1/LC/DF/A3yiJECgYAuK4XSfVGGTwfuWs1Ck+HF\n5gbtJ8g+nUnMKbAtYxk11QaVVSv2jHkFmGKbyXr+pKMKx1G0s6VC/Q4OHYCXOhMI\nzhBa+iXwh/JGmc++n4OCIbN9aOgrX8bYYch2+vyqFxtq+k9XgvPHf5UmSdpRh4dp\nxATQdcJa5e4awatvIlYUAQKBgQC1ndEj+JmlGbkD6LQQkgHdANOJ6VMOqxQnKSNn\nJWcON7pecVXbx1mqGZjgxteRRcFkUKHNWzUVpqjJX23RrFShGesz1odjUkkvgsJu\nahBLnJmvDsudJQG2UySEXUZI+FCoO1IGxZDV5Db7mdBDRtaMfhb7RzD/l8shrea4\n0b8DkQKBgQCFqTHZBZYBbcgqt0gPxfFvAExZfZk7LuBmQOMWThASXk9ZlOI3j5cV\nbdYbObpJMQgUahaHipw2QkDg/+AY0yErQboIJhnlv+bjsm+XRffX5JpGrpcluS1Y\nir2Dd2OZQeR5dv/0gUtgwaj7NOQGekuNIbCCQfEjeATpTjb8y5X66Q==\n-----END RSA PRIVATE KEY-----\n",
+      "pubkey": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDS4ADQteBiskpq9sTWXNV4bkqDwpmwRY6FkyoIPuLNKqRWj8pj1nxyus+SRq7Mp5dz3GyEUH872r2E7B0tiscSJT1+jl1vWYeiKb2umzmRGqHCI7AetP1LvrOhVyxMOUiSg/vwlZ+/lO0Vkamc4OzfMzrseC/JJqDNb+gW4ufqgACyNWrPIA/fmJWRopi3fMlZkCMWAtcqKEP2ywliyl4ZbAU5orc0nKYFjZhh4prQZ4NdJJ7XpipbZsBd0fL9/bVuTd4WPGYarvBG0njZsetsuO+X8L6A6iR0NqD/7UIrlRWbBDifwAMLr5YiWbZ20DuKBrYkDVQHIIobVXHqPLSR zzondlo@remzzondlo01.local\n"
+    },
+    "loadtesters": null
+  }
+}
