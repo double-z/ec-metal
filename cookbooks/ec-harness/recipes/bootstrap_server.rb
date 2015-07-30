@@ -19,26 +19,6 @@ machine_batch 'bootstrap_node' do
       add_machine_options(
         convergence_options: context.convergence_options
       )
-      recipe 'private-chef::default'
-
-      # recipe 'private-chef::hostname'
-      # recipe 'private-chef::hostsfile'
-      # recipe 'private-chef::rhel'
-      # recipe 'private-chef::provision'
-      # recipe 'private-chef::bugfixes' if node['harness']['apply_ec_bugfixes'] == true
-      # recipe 'private-chef::drbd' if ecm_topo_chef.is_backend?(vmname)
-      # recipe 'private-chef::provision_phase2'
-      # recipe 'private-chef::reporting' if node['harness']['reporting_package']
-      # recipe 'private-chef::manage' if node['harness']['manage_package'] &&
-      #   ecm_topo_chef.is_frontend?(vmname)
-      # recipe 'private-chef::pushy' if node['harness']['pushy_package']
-      # recipe 'private-chef::tools'
-      # recipe 'private-chef::users' if vmname == ecm_topo_chef.bootstrap_node_name
-      # recipe 'private-chef::loadbalancer' if ecm_topo_chef.is_frontend?(vmname) &&
-      #   node['harness']['provider'] == 'ec2'
-
-
-
       converge true
     end
   end
